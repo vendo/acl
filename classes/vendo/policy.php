@@ -9,10 +9,10 @@
  * ===
  * 
  * Create a class called Policy_<policy_name> that extends Policy and has a
- * single method inside of it, execute(), which takes a Model_User and an array
+ * single method inside of it, execute(), which takes a Model_Vendo_User and an array
  * parameter.
  * 
- * The Model_User method will be the user that the ACL rule should be checked
+ * The Model_Vendo_User method will be the user that the ACL rule should be checked
  * against. You can then write your advanced logic to determin if the user can
  * perform the requested action.
  * 
@@ -43,8 +43,8 @@
  * 
  * 	return array(
  * 		'edit_page' => array(
- * 			Model_Role::LOGIN => FALSE,
- * 			Model_Role::ADMIN => TRUE,
+ * 			Model_Vendo_Role::LOGIN => FALSE,
+ * 			Model_Vendo_Role::ADMIN => TRUE,
  * 		)
  * 	);
  * 
@@ -78,11 +78,11 @@ abstract class Vendo_Policy
 	/**
 	 * Method to execute a policy
 	 * 
-	 * @param Model_User $user  the user account to run the policy on
-	 * @param array      $extra an array of extra parameters that this policy
-	 *                          can use
+	 * @param Model_Vendo_User $user  the user account to run the policy on
+	 * @param array            $extra an array of extra parameters that this policy
+	 *                                can use
 	 *
 	 * @return bool/int
 	 */
-	abstract public function execute(Model_User $user, array $array = NULL);
+	abstract public function execute(Model_Vendo_User $user, array $array = NULL);
 }
