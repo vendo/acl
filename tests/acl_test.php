@@ -16,8 +16,9 @@ class ACL_Test extends Vendo_TestCase
 	 * 
 	 * @return null
 	 */
-	public function test_do_it()
+	public function test_user_can()
 	{
-		$policy = Vendo_Policy::factory('login');
+		// They aren't logged in
+		$this->assertFalse(self::$user->can('manage_preferences'));
 	}
 }

@@ -15,13 +15,13 @@ class Vendo_Policy_Logout extends Policy
 	/**
 	 * Method to execute the policy
 	 * 
-	 * @param Model_Vendo_User $user  the user account to run the policy on
-	 * @param array            $extra an array of extra parameters that this policy
-	 *                                can use
+	 * @param Model_ACL_User $user  the user account to run the policy on
+	 * @param array          $extra an array of extra parameters that this policy
+	 *                              can use
 	 *
 	 * @return bool/int
 	 */
-	public function execute(Model_Vendo_User $user, array $array = NULL)
+	public function execute(Model_ACL_User $user, array $array = NULL)
 	{
 		if ($user->has('roles', Model_Vendo_Role::LOGIN))
 		{
