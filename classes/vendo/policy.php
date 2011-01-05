@@ -9,12 +9,12 @@
  * ===
  * 
  * Create a class called Policy_<policy_name> that extends Policy and has a
- * single method inside of it, execute(), which takes a Model_Vendo_User and an array
- * parameter.
+ * single method inside of it, execute(), which takes a Model_Vendo_User and an
+ * array parameter.
  * 
- * The Model_Vendo_User method will be the user that the ACL rule should be checked
- * against. You can then write your advanced logic to determin if the user can
- * perform the requested action.
+ * The Model_Vendo_User method will be the user that the ACL rule should be
+ * checked against. You can then write your advanced logic to determin if the
+ * user can perform the requested action.
  * 
  * Example
  * ---
@@ -51,10 +51,10 @@
  * The first LOGIN line is not required (all policies default to FALSE), but
  * it is shown for example.
  *
- * @package    Vendo
- * @author     Jeremy Bush
- * @copyright  (c) 2010 Jeremy Bush
- * @license    http://github.com/zombor/Vendo/raw/master/LICENSE
+ * @package   Vendo
+ * @author    Jeremy Bush <contractfrombelow@gmail.com>
+ * @copyright (c) 2010-2011 Jeremy Bush
+ * @license   ISC License http://github.com/zombor/Vendo/raw/master/LICENSE
  */
 abstract class Vendo_Policy
 {
@@ -64,6 +64,8 @@ abstract class Vendo_Policy
 
 	/**
 	 * Factory method to return a specific policy
+	 * 
+	 * @param string $name the name of class to return
 	 *
 	 * @return Policy
 	 */
@@ -79,10 +81,10 @@ abstract class Vendo_Policy
 	 * Method to execute a policy
 	 * 
 	 * @param Model_ACL_User $user  the user account to run the policy on
-	 * @param array          $extra an array of extra parameters that this policy
-	 *                              can use
+	 * @param array          $extra an array of extra parameters that this
+	 *                              policy can use
 	 *
 	 * @return bool/int
 	 */
-	abstract public function execute(Model_ACL_User $user, array $array = NULL);
+	abstract public function execute(Model_ACL_User $user, array $extra = NULL);
 }
